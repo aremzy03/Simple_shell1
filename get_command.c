@@ -1,5 +1,13 @@
 #include "main.h"
-array get_command()
+
+/*
+ * get_command - Function to retrieve command.
+ * @void: Parameter of the program.
+ *
+ * Return: Array.
+ */
+
+array get_command(void)
 {
 	array arr;
 	size_t n;
@@ -27,7 +35,7 @@ array get_command()
 	}
 	token = strtok(cmd_cpy, delim);
 	i = 0;
-	while(token && i < arr.count)
+	while (token && i < arr.count)
 	{
 		arr.strings[i] = strdup(token);
 		token = strtok(NULL, delim);
@@ -36,5 +44,5 @@ array get_command()
 	arr.strings[i] = NULL;
 	free(cmd);
 	free(cmd_cpy);
-	return(arr);
+	return (arr);
 }
