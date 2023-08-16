@@ -15,5 +15,5 @@ typedef struct stringArray {
 /***********Functions*******/
 array get_command();
 void free_array(array *myarray);
-void execute(array *myarr);
+void execute(array myarr);
 #endif

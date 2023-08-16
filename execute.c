@@ -1,13 +1,22 @@
 #include "main.h"
 void execute(array myarr)
 {
-	char exe[100], cat[200] = "/bin/";
+	char *exe[100], cat[200] = "/bin/";
 	int j, run;
 	pid_t mypid;
 
-	for(j = 0; myarr->strings[j] != NULL; j++)
+	if(strstr(myarr.strings[0], cat) != NULL)
 	{
-		exe[j] = strdup(myarr->strings[j]);
+		exe[0] = myarr.strings[0];
+	}
+	else
+	{
+		strcat(cat, myarr.strings[0]);
+		exe[0] = strdup(cat);
+	}
+	for(j = 1; myarr.strings[j] != NULL; j++)
+	{
+		exe[j] = myarr.strings[j];
 	}
 	exe[j] = NULL;
 	mypid = fork();
@@ -19,7 +28,7 @@ void execute(array myarr)
 	if (mypid  == 0)
 	{
 		run = execve(exe[0], exe, NULL);
-		if (run == 0)
+		if (run == -1)
 		{
 			perror(":( error\n");
 		}
@@ -28,8 +37,5 @@ void execute(array myarr)
 	{
 		wait(NULL);
 	}
-	for (j = 0; exe[j] != NULL; j++)
-	{
-		free(exe[j]);
-	}
+	
 }

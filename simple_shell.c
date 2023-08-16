@@ -3,14 +3,23 @@ int main(void)
 {
 	array argv;
 	int i;
+	char out[100] = "exit";
 
-	printf(":) ");
-	argv = get_command();
-	for (i = 0; i < argv.count; i++)
-		printf("%s\n", argv.strings[i]);
-	execute(&argv);
-		
-	free_array(&argv);
-	
+	i = 0;
+	while (i == 0)
+	{
+		printf(":) ");
+		argv = get_command();
+		if (strcmp(argv.strings[0], out) == 0)
+		{
+			free_array(&argv);
+			i++;
+		}
+		else
+		{
+			execute(argv);	
+			free_array(&argv);
+		}
+	}
 	return (0);
 }
