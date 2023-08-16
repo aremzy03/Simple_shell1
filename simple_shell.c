@@ -1,4 +1,12 @@
 #include "main.h"
+
+/**
+ * main - Function to start the program.
+ * @void: Parameter of the program.
+ *
+ * Return: 0.
+ */
+
 int main(void)
 {
 	array argv;
@@ -17,7 +25,7 @@ int main(void)
 		}
 		else
 		{
-			execute(argv);	
+			execute(argv);
 			free_array(&argv);
 		}
 	}
