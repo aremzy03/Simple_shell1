@@ -8,6 +8,8 @@ int main(void)
 	argv = get_command();
 	for (i = 0; i < argv.count; i++)
 		printf("%s\n", argv.strings[i]);
+	execute(&argv);
+		
 	free_array(&argv);
 	
 	return (0);

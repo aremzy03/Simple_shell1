@@ -2,9 +2,15 @@
 void free_array(array *myarray)
 {
 	int i;
-	for (i = 0; i < myarray->count;i++)
+	if (myarray == NULL)
+		return;
+	if (myarray->strings)
 	{
-		free(myarray->strings[i]);
+		for (i = 0; i < myarray->count;i++)
+		{
+			free(myarray->strings[i]);
+		}
+		free(myarray->strings);
 	}
-	free(myarray);
+	myarray->count = 0;
 }
