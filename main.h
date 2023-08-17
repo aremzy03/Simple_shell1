@@ -24,7 +24,7 @@ typedef struct stringArray
 	char **strings;
 	int count;
 } array;
-
+extern char **environ;
 /***********Functions*******/
 array get_command(void);
 void free_array(array *myarray);
