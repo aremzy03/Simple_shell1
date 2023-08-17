@@ -23,8 +23,15 @@ int main(void)
 			free_array(&argv);
 			break;
 		}
-		execute(argv);
-		free_array(&argv);
+		if (strcmp(argv.strings[0], "env") == 0)
+		{
+			ptrenv();
+		}
+		else
+		{
+			execute(argv);
+			free_array(&argv);
+		}
 	}
 	return (0);
 }

@@ -30,5 +30,5 @@ array get_command(void);
 void free_array(array *myarray);
 void execute(array myarr);
 int main(void);
-
+int ptrenv(void);
 #endif
