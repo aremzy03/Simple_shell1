@@ -38,7 +38,7 @@ void execute(array myarr)
 		run = execve(exe[0], exe, NULL);
 		if (run == -1)
 		{
-			perror(":( error\n");
+			perror(":( ");
 		}
 	}
 	else

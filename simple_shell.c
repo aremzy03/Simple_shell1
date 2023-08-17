@@ -21,13 +21,10 @@ int main(void)
 		if (strcmp(argv.strings[0], out) == 0)
 		{
 			free_array(&argv);
-			i++;
+			break;
 		}
-		else
-		{
-			execute(argv);
-			free_array(&argv);
-		}
+		execute(argv);
+		free_array(&argv);
 	}
 	return (0);
 }
