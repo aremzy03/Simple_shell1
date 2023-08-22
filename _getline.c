@@ -1,4 +1,15 @@
 #include "main.h"
+
+/**
+* _getline - Function reads an entire line from stream.
+* @linptr: Address of buffer.
+* @n: Pointer to buffer.
+* @stream: File reading lines.
+*
+* Return: If successful number of characters read,
+* else -1 if failed.
+*/
+
 ssize_t _getline(char **linptr, ssize_t *n, FILE *stream)
 {
 	ssize_t num_read, pos = 0;
