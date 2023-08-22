@@ -33,4 +33,6 @@ int main(void);
 int ptrenv(void);
 ssize_t _getline(char **linptr, ssize_t *n, FILE *stream);
 char *_strtok(char *str, const char *delim);
+int compare(array com);
+int directory(char *path);
 #endif

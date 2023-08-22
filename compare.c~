@@ -1,0 +1,13 @@
+#include "main.h"
+int compare(array com)
+{
+	int i;
+	char *out[100] = {"exit", "env", "cd"};
+
+	for (i = 0; out[i] != '\0'; i++)
+	{
+		if (strcmp(com[0], out[i]) == 0)
+			break;
+	}
+	return (i);
+}	

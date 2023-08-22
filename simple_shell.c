@@ -10,27 +10,29 @@
 int main(void)
 {
 	array argv;
-	int i;
-	char out[100] = "exit";
+	int i, j;
 
 	i = 0;
 	while (i == 0)
 	{
 		printf(":) ");
 		argv = get_command();
-		if (strcmp(argv.strings[0], out) == 0)
+		j = compare(argv);
+		switch (j)
 		{
-			free_array(&argv);
-			break;
-		}
-		if (strcmp(argv.strings[0], "env") == 0)
-		{
-			ptrenv();
-		}
-		else
-		{
+		case 0:
 			execute(argv);
 			free_array(&argv);
+			break;
+		case 1:
+			i++;
+			break;
+		case 2:
+			ptrenv();
+			break;
+		case 3:
+			directory(argv.strings[1]);
+			break;
 		}
 	}
 	return (0);
