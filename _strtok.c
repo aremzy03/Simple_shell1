@@ -1,7 +1,18 @@
 #include "main.h"
+
+/**
+* *_strtok - Function used to split a string into small tokens.
+* @str: String to split into tokens.
+* @delim: Character used to seperate strings into smaller parts.
+*
+* Return: If successful pointer to token,
+* else NULL if no tokens.
+*/
+
 char *_strtok(char *str, const char *delim)
 {
-	static char *next = NULL;
+	static char *next;
+	*next = NUL;
 	char *start, *end;
 
 	if (next != NULL)
@@ -20,4 +31,4 @@ char *_strtok(char *str, const char *delim)
 		next = NULL;
 	}
 	return (start);
-}	
+}
