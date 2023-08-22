@@ -7,7 +7,7 @@
  * Return: NULL.
  */
 
-void execute(array myarr)
+int execute(array myarr)
 {
 	char *exe[100], cat[200] = "/bin/";
 	int j, run;
@@ -31,19 +31,22 @@ void execute(array myarr)
 	if (mypid == -1)
 	{
 		perror(":( Could not create process\n");
-		exit(1);
 	}
 	if (mypid  == 0)
 	{
 		run = execve(exe[0], exe, NULL);
 		if (run == -1)
 		{
-			perror(":( ");
+			perror(")");
+			return (0);
 		}
 	}
 	else
 	{
 		wait(NULL);
 	}
+	if (strcmp(exe[0], cat) == 0)
+		free(exe[0]);
+	return (0);
 
 }

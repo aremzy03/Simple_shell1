@@ -28,7 +28,9 @@ extern char **environ;
 /***********Functions*******/
 array get_command(void);
 void free_array(array *myarray);
-void execute(array myarr);
+int execute(array myarr);
 int main(void);
 int ptrenv(void);
+ssize_t _getline(char **linptr, ssize_t *n, FILE *stream);
+char *_strtok(char *str, const char *delim);
 #endif

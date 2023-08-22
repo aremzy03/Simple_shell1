@@ -10,13 +10,13 @@
 array get_command(void)
 {
 	array arr;
-	size_t n;
+	ssize_t n;
 	int command, i;
 	char *cmd = NULL, *cmd_cpy = NULL, *token = NULL, *delim = " \n";
 
 
 	arr.count = 0;
-	command = getline(&cmd, &n, stdin);
+	command = _getline(&cmd, &n, stdin);
 	if (command == -1)
 		exit(1);
 
