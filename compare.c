@@ -1,4 +1,11 @@
 #include "main.h"
+
+/**
+ * compare - Function used to compare strings.
+ * @com: String to compare.
+ *
+ * Return: 0.
+ */
 int compare(array com)
 {
 	char *out[100] = {"exit", "env", "cd"};
@@ -11,4 +18,4 @@ int compare(array com)
 		return (3);
 	else
 		return (0);
-}	
+}
