@@ -35,4 +35,7 @@ ssize_t _getline(char **linptr, ssize_t *n, FILE *stream);
 char *_strtok(char *str, const char *delim);
 int compare(array com);
 int directory(char *path);
+char *_concat(char *dest, const char *src);
+const char *_locate(const char *haystack, const char *needle);
+
 #endif
