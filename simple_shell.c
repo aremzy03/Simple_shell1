@@ -25,8 +25,7 @@ int main(void)
 			free_array(&argv);
 			break;
 		case 1:
-			i++;
-			break;
+			exit(0);
 		case 2:
 			ptrenv();
 			break;

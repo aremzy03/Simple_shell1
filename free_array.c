@@ -20,6 +20,7 @@ void free_array(array *myarray)
 			free(myarray->strings[i]);
 		}
 		free(myarray->strings);
+		myarray->strings = NULL;
 	}
 	myarray->count = 0;
 }

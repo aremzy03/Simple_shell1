@@ -9,7 +9,7 @@
 
 int execute(array myarr)
 {
-	char *exe[100], cat[200] = "/bin/";
+	char *exe[100], cat[200] = "/bin/", exe_path[200];
 	int j, run;
 	pid_t mypid;
 
@@ -19,8 +19,9 @@ int execute(array myarr)
 	}
 	else
 	{
-		strcat(cat, myarr.strings[0]);
-		exe[0] = strdup(cat);
+		strcpy(exe_path, cat);
+		strcat(exe_path, myarr.strings[0]);
+		exe[0] = strdup(exe_path);
 	}
 	for (j = 1; myarr.strings[j] != NULL; j++)
 	{
@@ -38,15 +39,19 @@ int execute(array myarr)
 		if (run == -1)
 		{
 			perror(")");
-			return (0);
+			free(exe[0]);
+			exit(EXIT_FAILURE);
 		}
 	}
 	else
 	{
 		wait(NULL);
+		free(exe[0]);
 	}
 	if (strcmp(exe[0], cat) == 0)
+	{
 		free(exe[0]);
+	}
 	return (0);
 
 }

@@ -11,7 +11,7 @@ array get_command(void)
 {
 	array arr;
 	ssize_t n;
-	int command, i;
+	int command, i, j;
 	char *cmd = NULL, *cmd_cpy = NULL, *token = NULL, *delim = " \n";
 
 
@@ -30,6 +30,8 @@ array get_command(void)
 	arr.strings = malloc(sizeof(char *) * (arr.count + 1));
 	if (arr.strings == NULL)
 	{
+		free(cmd);
+		free(cmd_cpy);
 		perror("error");
 		exit(1);
 	}
@@ -38,6 +40,14 @@ array get_command(void)
 	while (token && i < arr.count)
 	{
 		arr.strings[i] = strdup(token);
+		if (arr.strings[i] == NULL)
+		{
+			for (j = 0; j < i; j++)
+				free(arr.strings[j]);
+			free(arr.strings);
+			free(cmd);
+			free(cmd_cpy);
+		}
 		token = strtok(NULL, delim);
 		i++;
 	}
