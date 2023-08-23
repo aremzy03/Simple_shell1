@@ -46,12 +46,12 @@ int execute(array myarr)
 	else
 	{
 		wait(NULL);
-		free(exe[0]);
 	}
 	if (strcmp(exe[0], cat) == 0)
 	{
 		free(exe[0]);
 	}
+	exe[0] = NULL;
 	return (0);
 
 }
