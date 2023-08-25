@@ -37,5 +37,6 @@ int compare(array com);
 int directory(char *path);
 char *_concat(char *dest, const char *src);
 const char *_locate(const char *haystack, const char *needle);
+char *copystring(const char *str);
 
 #endif
