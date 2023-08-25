@@ -1,12 +1,10 @@
 #include "main.h"
-
-/*
+/**
  * get_command - Function to retrieve command.
  * @void: Parameter of the program.
  *
  * Return: Array.
  */
-
 array get_command(void)
 {
 	array arr;
@@ -14,19 +12,15 @@ array get_command(void)
 	int command, i, j;
 	char *cmd = NULL, *cmd_cpy = NULL, *token = NULL, *delim = " \n";
 
-
 	arr.count = 0;
 	command = _getline(&cmd, &n, stdin);
 	if (command == -1)
 		exit(1);
 
 	cmd_cpy = strdup(cmd);
-	token = strtok(cmd, delim);
-	while (token)
-	{
+	for (token = strtok(cmd, delim); token; arr.count++)
 		token = strtok(NULL, delim);
-		arr.count++;
-	}
+
 	arr.strings = malloc(sizeof(char *) * (arr.count + 1));
 	if (arr.strings == NULL)
 	{
@@ -36,8 +30,7 @@ array get_command(void)
 		exit(1);
 	}
 	token = strtok(cmd_cpy, delim);
-	i = 0;
-	while (token && i < arr.count)
+	for (i = 0; token && i < arr.count; i++)
 	{
 		arr.strings[i] = strdup(token);
 		if (arr.strings[i] == NULL)
@@ -49,7 +42,6 @@ array get_command(void)
 			free(cmd_cpy);
 		}
 		token = strtok(NULL, delim);
-		i++;
 	}
 	arr.strings[i] = NULL;
 	free(cmd);
