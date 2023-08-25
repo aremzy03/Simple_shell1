@@ -39,7 +39,7 @@ const char *_locate(const char *haystack, const char *needle)
 	int s1, s2;
 	const char *ptr;
 
-	for (s1 = 0; needle[s1] != '\0', s1++)
+	for (s1 = 0; needle[s1] != '\0'; s1++)
 	{
 		ptr = haystack;
 
@@ -57,4 +57,33 @@ const char *_locate(const char *haystack, const char *needle)
 		} while (*ptr);
 	}
 	return (NULL);
+}
+
+/**
+ * copystring - Function that duplicates a string.
+ * @str: Pointer to string to be duplicated.
+ *
+ * Return: Duplicated string, else NULL if available memory not enough.
+ */
+char *copystring(const char *str)
+{
+	int n, dupli;
+	char *new;
+
+	if (str == NULL)
+		return (NULL);
+
+	for (dupli = 0; str[dupli] != '\0'; dupli++)
+
+	new = (char *)malloc((dupli + 1) * sizeof(char));
+
+	if (!new)
+		return (NULL);
+
+	for (n = 0; n <= dupli; n++)
+		new[n] = str[n];
+
+	new[dupli] = '\0';
+	return (new);
+	free(new);
 }
