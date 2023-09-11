@@ -12,7 +12,7 @@ char *_concat(char *dest, const char *src)
 {
 	int strg1, strg2;
 
-	for (strg1 = 0; dest[strg1] != '\0'; strg1)
+	for (strg1 = 0; dest[strg1] != '\0'; strg1++)
 
 	strg2 = 0;
 

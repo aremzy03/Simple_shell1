@@ -34,5 +34,6 @@ int main(void)
 			break;
 		}
 	}
+	free_array(&argv);
 	return (0);
 }

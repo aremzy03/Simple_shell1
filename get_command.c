@@ -8,12 +8,12 @@
 array get_command(void)
 {
 	array arr;
-	ssize_t n;
+	size_t n;
 	int command, i, j;
 	char *cmd = NULL, *cmd_cpy = NULL, *token = NULL, *delim = " \n";
 
 	arr.count = 0;
-	command = _getline(&cmd, &n, stdin);
+	command = getline(&cmd, &n, stdin);
 	if (command == -1)
 		exit(1);
 
