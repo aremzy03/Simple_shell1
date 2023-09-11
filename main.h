@@ -13,8 +13,8 @@
 
 /**
  * struct stringArray - Struct made up of an array of strings.
- * @strings: First member a string.
- * @count: Second member.
+ * @strings: The strings in array.
+ * @count: size of array.
  *
  * Description: Struct of a combination of a character and string.
  */
