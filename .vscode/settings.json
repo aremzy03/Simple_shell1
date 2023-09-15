@@ -1,0 +1,12 @@
+{
+    "C_Cpp.codeAnalysis.clangTidy.checks.disabled": [
+        "clang-diagnostic-error",
+        "clang-diagnostic-implicit-function-declaration",
+        "clang-diagnostic-int-conversion",
+        "clang-analyzer-core.uninitialized.ArraySubscript",
+        "clang-analyzer-unix.Malloc",
+        "clang-analyzer-core.uninitialized.Branch",
+        "clang-analyzer-security.insecureAPI.strcpy",
+        "clang-diagnostic-pointer-sign"
+    ]
+}
